@@ -28,7 +28,7 @@ var notifica = {
 
 /* funcção de carregamento de página */
 function notifyCarregaPagina(funcTimer){
-	var notify = $.notify('<strong>Carregando</strong> Por favor não feche a página...', {
+	notify = $.notify('<strong>Carregando</strong> Por favor não feche a página...', {
 		allow_dismiss: false,
 		showProgressbar: true,
 		delay: funcTimer

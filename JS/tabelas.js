@@ -11,21 +11,28 @@
 var tabela ={
 	adiciona: function(data){
 		/*Insere no array mais uma linha*/ 
-		linesTable.push(JSON.parse('{"id":'+countLinesTable+',"name":"Danspinon"}'));
-		countLinesTable = linesTable.length;
+		linesTable.push(JSON.parse('{"id":'+linesTable.length+',"name":"Danspinon"}'));
 		tabela.exibe();
+		notifica.sucesso('Adicionado com sucesso!');
 	},
 	remove: function (data,verify){
 		if(verify == true){
 			linesTable.splice(deleteId,1);
 			tabela.exibe();
+			notifica.sucesso('Removido com sucesso!');
 			deleteId = 0;
 		}else{
 			deleteId = data;
 		}
 	},
-	edita: function(data){
-		
+	edita: function(data,id,verify){
+		data = JSON.parse('{"id":'+linesTable.length+',"name":"Pinon"}');
+		if(verify == true){
+			linesTable[editId] = data;
+			editId = 0;
+		}else{
+			editId = id;
+		}
 	},
 	exibe: function(){
 		if(linesTable.length > 0){

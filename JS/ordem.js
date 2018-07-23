@@ -10,6 +10,12 @@
 var ordem = {
 	salvar: function(){
 		console.log();
-		notifica.sucesso('Salvo com sucesso');
+		notify = $.notify('<strong>Salvando</strong> Não feche a página...', {
+			allow_dismiss: false,
+			showProgressbar: true
+		});
+		setTimeout(function() {
+			notify.update({'type': 'success', 'message': '<strong>Success</strong> Your page has been saved!', 'progress': 25});
+		}, 4500);
 	}
 };

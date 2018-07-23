@@ -4,11 +4,12 @@ var objLinesTable;
 var lineTable = "";
 var deleteLine = false;
 var deleteId;
-var countLinesTable;
+var editId;
+var editLine = false;
 
 /*Variáveis de html*/
 var buttonTable = function(data){
-return '<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editaModal" onclick="tabela.edita('+data+')">'+
+return '<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editaModal" onclick="tabela.edita(0,'+data+',false)">'+
    '<i class="glyphicon glyphicon-pencil"></i> Editar'+
 '</button>'+
 '&nbsp;' +
