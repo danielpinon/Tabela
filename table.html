@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-notify.js"></script>
+  <script src="js/bootstrap-notify.min.js"></script>
+  <script type="text/javascript" src="js/table.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Bordered Table</h2>
+  <p>The .table-bordered class adds borders to a table:</p>  
+  <p>
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#adicionaModal"> 
+        <i class="glyphicon glyphicon-plus"></i> Adicionar
+    </button>
+    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#saveModal"> 
+        <i class="glyphicon glyphicon-ok-circle"></i> Salvar
+    </button>
+</p>          
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Matricula</th>
+        <th>Nome</th>
+        <th>Dados do Serviço</th>
+        <th>Diária/Produção</th>
+        <th>HE 50%</th>
+        <th>HE 100%</th>
+        <th>Noturno</th>
+        <th>Total Geral</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+        <td>John</td>
+        <td>Doe</td>
+        <td>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editaModal">
+                <i class="glyphicon glyphicon-pencil"></i> Editar
+            </button> 
+                    &nbsp; 
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#removeModal">
+                <i class="glyphicon glyphicon-trash"></i> Remover
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Modal Adicionar Linha -->
+<div class="modal fade" id="adicionaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="glyphicon glyphicon-plus"></i> Nova Linha</h5>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-4">
+              <div class="form-group">
+                <div class="col-sm-12">&nbsp;</div>
+                <div class="col-sm-12">&nbsp;</div>
+                <label class="col-sm-12">Cadastro</label>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#findAvulsoModal">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome do Avulso">
+                    <input type="hidden" id="exampleFormControlInput1" value="MATRICULA">
+                </div>
+              </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="col-sm-12">&nbsp;</div>
+            <div class="col-sm-12">&nbsp;</div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Dados Serviço</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option value="1">1</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div class="form-group">
+              <label  class="col-sm-12">Diária Produção</label>
+              <div class="col-sm-6">
+                <label >Qtde:</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0">
+              </div>
+              <div class="col-sm-6">
+                <label >Valor:</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0,00">
+              </div>
+              <div class="col-sm-6">
+                <label >Peric:</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0">
+              </div>
+              <div class="col-sm-6">
+                <label >Ad. Div.</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12">&nbsp;</div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="col-sm-12">HE 50%</label>
+              <div class="col-sm-5">
+                <label >Val.</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0">
+              </div>
+              <div class="col-sm-7">
+                <label >Total</label>
+                <input class="form-control" type="text" placeholder="100,00" readonly>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="col-sm-12">HE 100%</label>
+              <div class="col-sm-5">
+                <label >Val.</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0">
+              </div>
+              <div class="col-sm-7">
+                <label >Total</label>
+                <input class="form-control" type="text" placeholder="100,00" readonly>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <label class="col-sm-12">NOTURNA</label>
+              <div class="col-sm-5">
+                <label >Val.</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="0">
+              </div>
+              <div class="col-sm-7">
+                <label >Total</label>
+                <input class="form-control" type="text" placeholder="100,00" readonly>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="col-sm-4">
+            <div class="col-sm-3">
+                <label>Total Geral:</label>
+            </div>
+            <div class="col-sm-9">
+                <input class="form-control" type="text" placeholder="100,00" readonly>
+            </div>
+        </div>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove-circle"></i> Fechar
+        </button>
+        <button type="button" class="btn btn-success">
+            <i class="glyphicon glyphicon-ok-circle"></i> Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Edita Linha -->
+<div class="modal fade" id="editaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal Edita</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Remove Linha -->
+<div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        Deseja Remover essa linha?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger">Remover</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Busca Avulso -->
+<div class="modal fade" id="findAvulsoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger">Remover</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Salva Tabela -->
+<div class="modal fade" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <h4>Deseja salvar todas as modificações?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">
+            <i class="glyphicon glyphicon-remove"></i> Voltar
+         </button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" onclick="ordem.salvar();">
+            <i class="glyphicon glyphicon-ok"></i> Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Alert -->
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+</body>
+</html>
