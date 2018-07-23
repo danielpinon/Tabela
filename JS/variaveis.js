@@ -6,7 +6,7 @@ var deleteLine = false;
 var deleteId;
 var editId;
 var editLine = false;
-
+var notify;
 /*Variáveis de html*/
 var buttonTable = function(data){
 return '<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editaModal" onclick="tabela.edita(0,'+data+',false)">'+
