@@ -12,11 +12,14 @@
 	document.write(unescape("%3Cscript src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' type='text/javascript'%3E%3C/script%3E"));
 	document.write(unescape("%3Cscript src='js/bootstrap-notify.js' type='text/javascript'%3E%3C/script%3E"));
 	document.write(unescape("%3Cscript src='js/bootstrap-notify.min.js' type='text/javascript'%3E%3C/script%3E"));
+	document.write(unescape("%3Cscript src='js/function.js' type='text/javascript'%3E%3C/script%3E"));
 	document.write(unescape("%3Cscript src='js/notify.js' type='text/javascript'%3E%3C/script%3E"));
 	document.write(unescape("%3Cscript src='js/ordem.js' type='text/javascript'%3E%3C/script%3E"));
 	document.write(unescape("%3Cscript src='js/tabelas.js' type='text/javascript'%3E%3C/script%3E"));
 	document.write(unescape("%3Cscript src='js/variaveis.js' type='text/javascript'%3E%3C/script%3E"));
 	document.write(unescape("%3Cscript src='js/cript.js' type='text/javascript'%3E%3C/script%3E"));
+	document.write(unescape("%3Cscript src='js/elements.js' type='text/javascript'%3E%3C/script%3E"));
+	
 
 
 window.onload = function () { 
